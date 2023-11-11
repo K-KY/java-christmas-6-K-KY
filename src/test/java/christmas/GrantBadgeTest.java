@@ -1,6 +1,7 @@
 package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,4 +26,15 @@ public class GrantBadgeTest {
         GrantBadge grantBadge = new GrantBadge();
         assertThat(grantBadge.grantedBadge(20000).name()).isEqualTo(ChristmasBadge.SANTA.name());
     }
+
+    @Test
+    @DisplayName("배지를 획득하면 안내 문구를 출력")
+    void grantBadgePrintTest() {
+        GrantBadge grantBadge = new GrantBadge();
+        ChristmasBadge christmasBadge = grantBadge.grantedBadge(20000);
+
+        assertThat(christmasBadge.getName(christmasBadge)).isEqualTo("산타");
+    }
+
+
 }
