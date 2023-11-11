@@ -9,7 +9,7 @@ public enum DessertMenu {
     ICE_CREAM("아이스크림", 5_000);
 
     private static final HashMap<String, Integer> menuBoard = new HashMap<>();
-    private static final String MENU_TYPE = "DESSERT";
+    private static final String MENU_TYPE = "디저트";
     private final String menuName;
     private final int price;
 
