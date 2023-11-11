@@ -22,7 +22,7 @@ public enum BeverageMenu {
     CHAMPAGNE("샴페인", 25_000);
 
     private static final HashMap<String, Integer> menuBoard = new HashMap<>();
-    private static final String MENU_TYPE = "BEVERAGE";
+    private static final String MENU_TYPE = "음료";
     private final int price;
     private final String menuName;
 
