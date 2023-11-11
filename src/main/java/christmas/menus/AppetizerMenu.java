@@ -10,7 +10,7 @@ public enum AppetizerMenu {
     CAESAR_SALAD("시저 샐러드", 8_000);
 
 
-    private static final String MENU_TYPE = "Appetizer";
+    private static final String MENU_TYPE = "애피타이저";
     private static final HashMap<String, Integer> menuBoard = new HashMap<>();
     private final String menuName;
     private final int price;
