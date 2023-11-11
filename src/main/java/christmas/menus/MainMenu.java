@@ -11,7 +11,7 @@ public enum MainMenu {
     CHRISTMAS_PASTA("크리스마스파스타", 25_000);
 
     private final static HashMap<String, Integer> menuBoard = new HashMap<>();
-    private static final String MENU_TYPE = "MAIN";
+    private static final String MENU_TYPE = "메인";
     private final String menuName;
     private final int price;
 
