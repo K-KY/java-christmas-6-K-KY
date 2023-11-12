@@ -3,15 +3,15 @@ package christmas;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.discounter.WeekDayDiscounter;
+import christmas.week.Week;
 import org.junit.jupiter.api.Test;
 
 public class WeekTest {
 
     @Test
     void printDayTest() {
-        WeekDayDiscounter weekDayDiscounter = new WeekDayDiscounter();
-        assertThat(weekDayDiscounter.orderDay(10)).isTrue();//일요일
-        assertThat(weekDayDiscounter.orderDay(11)).isFalse();//월요일
+        assertThat(Week.isWeekend("일요일")).isTrue();
+        assertThat(Week.isWeekend("월요일")).isFalse();
     }
 
 }
