@@ -8,9 +8,9 @@ public enum Week {
     TUESDAY("화요일", false),
     WEDNESDAY("수요일", false),
     THURSDAY("목요일", false),
-    FRIDAY("금요일", false),
+    FRIDAY("금요일", true),
     SATURDAY("토요일", true),
-    SUNDAY("일요일", true);
+    SUNDAY("일요일", false);
 
     private final String day;
     private final boolean weekend;
