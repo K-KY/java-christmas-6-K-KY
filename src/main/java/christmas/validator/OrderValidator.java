@@ -33,4 +33,10 @@ public class OrderValidator {
             throw new IllegalStateException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
+
+    public static void isOnlyBeverage(boolean onlyBeverage) {
+        if (onlyBeverage) {
+            throw new IllegalStateException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        }
+    }
 }
