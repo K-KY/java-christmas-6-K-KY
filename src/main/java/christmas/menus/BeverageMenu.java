@@ -23,6 +23,7 @@ public enum BeverageMenu {
 
     private static final HashMap<String, Integer> categoryMenu = new HashMap<>();
     private static final String MENU_TYPE = "음료";
+    private static  MenuCategory category;
     private final int price;
     private final String menuName;
 
@@ -34,12 +35,13 @@ public enum BeverageMenu {
     private static void setCategoryMenu() {
         List<BeverageMenu> menus = List.of(BeverageMenu.values());
         menus.forEach(menu -> categoryMenu.put(menu.menuName, menu.price));
+        category = new MenuCategory(categoryMenu, MENU_TYPE);
     }
 
     public static MenuCategory getMenuCategory() {
         if (categoryMenu.isEmpty()) {
             setCategoryMenu();
         }
-        return new MenuCategory(categoryMenu, MENU_TYPE);
+        return category;
     }
 }
