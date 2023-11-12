@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.StringJoiner;
 
-public class MenuBoard {
+public class MenuCategory {
     private static final String NEW_LINE = "\n";
     private static final String PRICE_FORMAT = "(###,###)";
     private static final String LESS_THAN = "<";
@@ -17,7 +17,7 @@ public class MenuBoard {
     private final String menuType;
     private final HashMap<String, Integer> menuBoard;
 
-    public MenuBoard(HashMap<String, Integer> menuBoard, String menuType) {
+    public MenuCategory(HashMap<String, Integer> menuBoard, String menuType) {
         this.menuBoard = menuBoard;
         this.menuType = menuType;
     }
