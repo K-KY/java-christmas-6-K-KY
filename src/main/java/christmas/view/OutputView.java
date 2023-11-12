@@ -21,4 +21,9 @@ public class OutputView {
         System.out.println("주말 할인이 적용됩니다!");
         System.out.println("10,000원 이상 주문하면 모든 메인메뉴 2023원 할인");
     }
+
+    public static void printChristMasDiscountAnnouncement(int discount) {
+        System.out.println("크리스마스 디데이 할인이 적용됩니다!");
+        System.out.println("10000원 이상 주문 하면 총금액에서 " + discount +"원 할인");
+    }
 }
