@@ -41,4 +41,8 @@ public class MenuCategory {
         CONTENT_WRAPPER.append(LESS_THAN).append(category).append(GRATER_THAN);
         return CONTENT_WRAPPER.toString();
     }
+
+    public boolean isExist(String menu) {
+        return menuBoard.containsKey(menu);
+    }
 }
