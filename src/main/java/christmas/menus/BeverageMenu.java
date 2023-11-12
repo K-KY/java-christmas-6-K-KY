@@ -12,7 +12,7 @@ package christmas.menus;
 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 */
 
-import christmas.MenuBoard;
+import christmas.MenuCategory;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public enum BeverageMenu {
     RED_WINE("레드와인", 60_000),
     CHAMPAGNE("샴페인", 25_000);
 
-    private static final HashMap<String, Integer> menuBoard = new HashMap<>();
+    private static final HashMap<String, Integer> categoryMenu = new HashMap<>();
     private static final String MENU_TYPE = "음료";
     private final int price;
     private final String menuName;
@@ -31,15 +31,15 @@ public enum BeverageMenu {
         this.price = price;
     }
 
-    private static void setMenuBoard() {
+    private static void setCategoryMenu() {
         List<BeverageMenu> menus = List.of(BeverageMenu.values());
-        menus.forEach(menu -> menuBoard.put(menu.menuName, menu.price));
+        menus.forEach(menu -> categoryMenu.put(menu.menuName, menu.price));
     }
 
-    public static MenuBoard getMenuBoard() {
-        if (menuBoard.isEmpty()) {
-            setMenuBoard();
+    public static MenuCategory getMenuCategory() {
+        if (categoryMenu.isEmpty()) {
+            setCategoryMenu();
         }
-        return new MenuBoard(menuBoard, MENU_TYPE);
+        return new MenuCategory(categoryMenu, MENU_TYPE);
     }
 }

@@ -1,6 +1,6 @@
 package christmas.menus;
 
-import christmas.MenuBoard;
+import christmas.MenuCategory;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,7 +10,7 @@ public enum MainMenu {
     SEA_FOOD_PASTA("해산물파스타", 35_000),
     CHRISTMAS_PASTA("크리스마스파스타", 25_000);
 
-    private final static HashMap<String, Integer> menuBoard = new HashMap<>();
+    private final static HashMap<String, Integer> categoryMenu = new HashMap<>();
     private static final String MENU_TYPE = "메인";
     private final String menuName;
     private final int price;
@@ -20,15 +20,15 @@ public enum MainMenu {
         this.price = price;
     }
 
-    private static void setMenuBoard() {
+    private static void setCategoryMenu() {
         List<MainMenu> menus = List.of(MainMenu.values());
-        menus.forEach(menu -> menuBoard.put(menu.menuName, menu.price));
+        menus.forEach(menu -> MainMenu.categoryMenu.put(menu.menuName, menu.price));
     }
 
-    public static MenuBoard getMenuBoard() {
-        if (menuBoard.isEmpty()) {
-            setMenuBoard();
+    public static MenuCategory getMenuCategory() {
+        if (categoryMenu.isEmpty()) {
+            setCategoryMenu();
         }
-        return new MenuBoard(menuBoard, MENU_TYPE);
+        return new MenuCategory(categoryMenu, MENU_TYPE);
     }
 }
