@@ -11,8 +11,8 @@ public class MenuBoard {
     private static final String GRATER_THAN = ">";
     private static final String COMMA = ", ";
     private static final int CLEAR = 0;
-    private static final DecimalFormat content = new DecimalFormat(PRICE_FORMAT);
-    private static final StringBuilder contentWrapper = new StringBuilder();
+    private static final DecimalFormat CONTENT = new DecimalFormat(PRICE_FORMAT);
+    private static final StringBuilder CONTENT_WRAPPER = new StringBuilder();
 
     private final String menuType;
     private final HashMap<String, Integer> menuBoard;
@@ -33,12 +33,12 @@ public class MenuBoard {
     }
 
     private String wrapContent(int price) {
-        return content.format(price);
+        return CONTENT.format(price);
     }
 
     private String wrapContent(String category) {
-        contentWrapper.setLength(CLEAR);
-        contentWrapper.append(LESS_THAN).append(category).append(GRATER_THAN);
-        return contentWrapper.toString();
+        CONTENT_WRAPPER.setLength(CLEAR);
+        CONTENT_WRAPPER.append(LESS_THAN).append(category).append(GRATER_THAN);
+        return CONTENT_WRAPPER.toString();
     }
 }
