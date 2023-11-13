@@ -39,4 +39,11 @@ public class MenuBoard {
                 .filter(result -> result)
                 .findFirst().orElse(false);
     }
+
+    public int findPrice(String menuName) {
+        return menuCategories.stream()
+                .map(menuCategory -> menuCategory.findPrice(menuName))
+                .filter(result -> result != 0)
+                .findFirst().orElse(0);
+    }
 }
