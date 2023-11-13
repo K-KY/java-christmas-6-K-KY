@@ -21,7 +21,7 @@ public class MenuReceiverTest {
         List<String> orders = List.of("제로콜라-1".split(","));
         MenuReceiver menuReceiver = new MenuReceiver(orders);
         assertThatThrownBy(menuReceiver::receive)
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class MenuReceiverTest {
         List<String> orders = List.of("티본스테이크-21".split(","));
         MenuReceiver menuReceiver = new MenuReceiver(orders);
         assertThatThrownBy(menuReceiver::receive)
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
@@ -37,14 +37,14 @@ public class MenuReceiverTest {
         List<String> orders = List.of("티본스테이크-10,아이스크림-11".split(","));
         MenuReceiver menuReceiver = new MenuReceiver(orders);
         assertThatThrownBy(menuReceiver::receive)
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
     @Test
     void amountNotNumber() {
         List<String> orders = List.of("티본스테이크-10,아이스크림-a".split(","));
         MenuReceiver menuReceiver = new MenuReceiver(orders);
         assertThatThrownBy(menuReceiver::receive)
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
