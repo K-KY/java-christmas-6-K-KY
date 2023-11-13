@@ -13,6 +13,7 @@ public class Menu {
 
         this.menuName = menuName;
         this.amount = amount;
+        OrderedAmount.getOrderedAmount(menuPrice() * amount);
     }
 
     public List<Integer> addAmount(List<Integer> amounts) {
@@ -22,5 +23,9 @@ public class Menu {
 
     public boolean isBeverage(MenuCategory beverageCategory) {
         return beverageCategory.isExist(menuName);
+    }
+
+    private int menuPrice() {
+        return new MenuBoard().findPrice(menuName);
     }
 }
