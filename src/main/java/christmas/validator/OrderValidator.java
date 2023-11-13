@@ -1,24 +1,21 @@
 package christmas.validator;
 
-import christmas.MenuCategory;
-import java.util.List;
+import christmas.MenuBoard;
 
 public class OrderValidator {
 
     private static final String DIGIT = "[0-9]+";
+    private static final MenuBoard menuBoard = new MenuBoard();
 
-    public static void isExist(String order, List<MenuCategory> menus) {
-        if (checkMenu(order, menus)) {
+    public static void isExist(String order) {
+        if (checkMenu(order)) {
             return;
         }
         throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
     }
 
-    private static Boolean checkMenu(String order, List<MenuCategory> menus) {
-        return menus.stream()
-                .map(menu -> menu.isExist(order))
-                .filter(result -> result)
-                .findFirst().orElse(false);
+    private static Boolean checkMenu(String order) {
+       return menuBoard.find(order);
     }
 
     public static void isValidAmount(String amount) {
