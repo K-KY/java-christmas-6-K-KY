@@ -22,6 +22,6 @@ public class MenuTest {
     @Test
     void bigAmount() {
         assertThatThrownBy(() -> new Menu("아이스크림", 99))
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
