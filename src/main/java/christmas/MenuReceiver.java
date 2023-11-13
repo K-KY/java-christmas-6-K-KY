@@ -5,8 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuReceiver {
+    private final List<String> orders;
 
-    public UserOrder receive(List<String> orders) {
+    public MenuReceiver(List<String> orders) {
+        this.orders = orders;
+    }
+
+    public UserOrder receive() {
         List<Menu> menus = new ArrayList<>();
         orders.forEach(order -> {
             menus.add(order(order));
