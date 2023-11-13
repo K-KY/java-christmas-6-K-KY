@@ -45,4 +45,8 @@ public class MenuCategory {
     public boolean isExist(String menu) {
         return menuBoard.containsKey(menu);
     }
+
+    public int findPrice(String menuName) {
+        return menuBoard.getOrDefault(menuName, 0);
+    }
 }
