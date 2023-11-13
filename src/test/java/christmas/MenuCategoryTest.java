@@ -45,7 +45,7 @@ public class MenuCategoryTest {
         System.out.println(MainMenu.getMenuCategory());
         assertThat(MainMenu.getMenuCategory().toString())
                 .isEqualTo("<메인>\n"
-                        + "티본스테이크(55,000), 해산물파스타(35,000), 바베큐립(54,000), 크리스마스파스타(25,000)");
+                        + "티본스테이크(55,000), 해산물파스타(35,000), 크리스마스파스타(25,000), 바비큐립(54,000)");
     }
 
     @Test
