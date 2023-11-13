@@ -26,6 +26,7 @@ public class MenuReceiver {
 
     private Menu order(String order) {
         List<String> userOrder = List.of(order.split("-"));
+        OrderValidator.menuForm(userOrder);
         return new Menu(userOrder.get(0), amountConverter(userOrder.get(1)));
     }
 }
