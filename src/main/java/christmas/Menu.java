@@ -13,6 +13,9 @@ public class Menu {
 
         this.menuName = menuName;
         this.amount = amount;
+    }
+
+    public void addPrice() {
         OrderedAmount.getOrderedAmount(menuPrice() * amount);
     }
 
