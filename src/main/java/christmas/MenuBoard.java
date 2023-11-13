@@ -12,8 +12,9 @@ public class MenuBoard {
     private static final String NEW_LINE = "\n";
 
     public MenuBoard() {
-        menuCategories.clear();
-        loadMenuCategory();
+        if (menuCategories.isEmpty()) {
+            loadMenuCategory();
+        }
     }
 
     private void loadMenuCategory() {
@@ -26,12 +27,14 @@ public class MenuBoard {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        menuCategories.forEach(category -> stringBuilder.append(category.toString()).append(NEW_LINE));
+        menuCategories.forEach(category -> stringBuilder
+                .append(category.toString())
+                .append(NEW_LINE));
         return stringBuilder.toString();
     }
 
     public boolean find(String order) {
-       return menuCategories.stream()
+        return menuCategories.stream()
                 .map(menuCategory -> menuCategory.isExist(order))
                 .filter(result -> result)
                 .findFirst().orElse(false);
