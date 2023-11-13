@@ -39,4 +39,19 @@ public class MenuReceiverTest {
         assertThatThrownBy(() -> menuReceiver.receive(orders))
                 .isInstanceOf(IllegalStateException.class);
     }
+    @Test
+    void amountNotNumber() {
+        List<String> orders = List.of("티본스테이크-10,아이스크림-a".split(","));
+        MenuReceiver menuReceiver = new MenuReceiver();
+        assertThatThrownBy(() -> menuReceiver.receive(orders))
+                .isInstanceOf(IllegalStateException.class);
+    }
+
+    @Test
+    void menuNotExist() {
+        List<String> orders = List.of("고등어-10".split(","));
+        MenuReceiver menuReceiver = new MenuReceiver();
+        assertThatThrownBy(() -> menuReceiver.receive(orders))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
