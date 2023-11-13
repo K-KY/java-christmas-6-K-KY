@@ -17,7 +17,7 @@ public class PlannerController {
             String userMenu = InputView.orderMenu(menuBoard);
             MenuReceiver menuReceiver = new MenuReceiver(List.of(userMenu.split(",")));
             userOrder = menuReceiver.receive();
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             userOrder = callUserOrder();
         }
