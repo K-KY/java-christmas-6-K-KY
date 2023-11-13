@@ -20,12 +20,12 @@ public class UserOrderTest {
         Menu menu = new Menu("아이스크림", 19);
         Menu menu2 = new Menu("초코케이크", 19);
         assertThatThrownBy(() -> new UserOrder(List.of(menu, menu2)))
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
     @Test
     void userOrderOnlyBeverage() {
         Menu menu = new Menu("제로콜라", 19);
         assertThatThrownBy(() -> new UserOrder(List.of(menu)))
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
