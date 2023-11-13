@@ -21,7 +21,7 @@ public class OrderValidateTest {
     @Test
     void inValidAmount() {
         assertThatThrownBy(() -> OrderValidator.isValidAmount("q"))
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
     @Test
     void validAmount() {
@@ -37,6 +37,6 @@ public class OrderValidateTest {
     @Test
     void isNotAmountInRange() {
         assertThatThrownBy(() -> OrderValidator.isAmountInRange(21))
-                .isInstanceOf(IllegalStateException.class);
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
