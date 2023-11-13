@@ -15,6 +15,8 @@ public class InputView {
 
     public static String orderMenu(MenuBoard menuBoard) {
         OutputView.menuAndAmount(menuBoard);
-        return Console.readLine();
+        String input = Console.readLine();
+
+        return input.replace(" ", "");
     }
 }
