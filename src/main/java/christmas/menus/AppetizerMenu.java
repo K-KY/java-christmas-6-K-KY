@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 
 public enum AppetizerMenu {
-    MUSHROOM_SOUP("양송이 수프", 6_000),
+    MUSHROOM_SOUP("양송이수프", 6_000),
     TAPAS("타파스", 5_500),
-    CAESAR_SALAD("시저 샐러드", 8_000);
+    CAESAR_SALAD("시저샐러드", 8_000);
 
 
     private static final String MENU_TYPE = "애피타이저";
