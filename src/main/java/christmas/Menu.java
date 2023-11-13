@@ -7,8 +7,8 @@ public class Menu {
     private final String menuName;
     private final int amount;
 
-    public Menu(String menuName, int amount, List<MenuCategory> menuCategories) {
-        OrderValidator.isExist(menuName, menuCategories);
+    public Menu(String menuName, int amount) {
+        OrderValidator.isExist(menuName);
         OrderValidator.isAmountInRange(amount);
 
         this.menuName = menuName;
