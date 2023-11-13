@@ -2,7 +2,7 @@ package christmas.validator;
 
 public class DateValidator {
 
-    private static final String DIGIT = "[1-9]+";
+    private static final String DIGIT = "[0-9]+";
 
     public static void isNumber(String number) {
         if (number.matches(DIGIT)) {
