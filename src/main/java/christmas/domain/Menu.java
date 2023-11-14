@@ -15,8 +15,8 @@ public class Menu {
         this.amount = amount;
     }
 
-    public void addPrice() {
-        OrderedAmount.getOrderedAmount(menuPrice() * amount);
+    public int getPrice() {
+        return menuPrice() * amount;
     }
 
     public List<Integer> addAmount(List<Integer> amounts) {
