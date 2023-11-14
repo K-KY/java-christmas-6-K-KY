@@ -1,5 +1,6 @@
 package christmas.discounter;
 
+import christmas.Benefit;
 import christmas.Menu;
 import christmas.MenuCategory;
 import christmas.OrderedAmount;
@@ -16,15 +17,16 @@ public class WeekDayDiscounter {
     private static final MenuCategory dessertCategory = DessertMenu.getMenuCategory();
     private static final List<Integer> amount = new ArrayList<>();
     private static final OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-
-    public String discount(UserOrder userOrder) {
+    private static final Benefit benefit = Benefit.getBenefit();
+    public void discount(UserOrder userOrder) {
         List<Menu> orders = userOrder.orders;
         long dessertCount = dessertCount(orders);
         if (dessertCount == 0) {
-            return "";
+            return;
         }
         orderedAmount.discount(dessertCount * 2023);
-        return "평일 할인: " + MONEY_FORMAT.format(2023 * dessertCount);
+
+        benefit.addBenefit("평일 할인: " + MONEY_FORMAT.format(2023 * dessertCount));
     }
 
     private static long dessertCount(List<Menu> orders) {
