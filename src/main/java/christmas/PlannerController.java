@@ -21,32 +21,13 @@ public class PlannerController {
         OutputView.orderContent(userOrder);
         OutputView.totalAmount();
         OutputView.present(presentDiscount());
-        discountHistory(date, userOrder, weekend);
+        new DiscountController().calculateDiscount(date, userOrder);
+        OutputView.discountHistory(Benefit.getBenefit().toString());;
         OutputView.totalDiscount();
         OutputView.afterDiscount(orderedAmount.afterDiscount());
         OutputView.grantedBadge(orderedAmount.getBadge());
     }
 
-    private void discountHistory(Date date, UserOrder userOrder, boolean weekend) {
-        System.out.println("<혜택 내역>");
-        if (orderedAmount.noDiscount()) {
-            System.out.println("없음");
-        }
-        OutputView.discountHistory(weekDiscount(userOrder, weekend));
-        OutputView.discountHistory(christmasDiscount(date));
-        OutputView.discountHistory(specialDiscount(date));
-        System.out.println();
-    }
-
-    private String specialDiscount(Date date) {
-        SpecialDiscounter specialDiscounter = new SpecialDiscounter();
-        return specialDiscounter.discount(date);
-    }
-
-    private String christmasDiscount(Date date) {
-        ChristmasDiscounter christmasDiscounter = new ChristmasDiscounter();
-        return christmasDiscounter.discount(date);
-    }
 
     private UserOrder callUserOrder() {
         UserOrder userOrder;
@@ -73,25 +54,7 @@ public class PlannerController {
         return date;
     }
 
-    private String weekDiscount(UserOrder userOrder, boolean weekend) {
-        if (orderedAmount.isOverTenThousand()) {
-            return weekendDiscount(weekend, userOrder);
-        }
-        return "";
-    }
 
-    private String weekendDiscount(boolean weekend, UserOrder userOrder) {
-        if (weekend) {
-            WeekendDiscounter weekendDiscounter = new WeekendDiscounter();
-            return weekendDiscounter.discount(userOrder);
-        }
-        return weekDayDiscount(userOrder);
-    }
-
-    private String weekDayDiscount(UserOrder userOrder) {
-        WeekDayDiscounter weekDayDiscounter = new WeekDayDiscounter();
-        return weekDayDiscounter.discount(userOrder);
-    }
 
     private String presentDiscount() {
         PresentDiscounter presentDiscounter = new PresentDiscounter();
