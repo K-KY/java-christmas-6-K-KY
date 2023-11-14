@@ -4,19 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Benefit {
-    private static final List<String> ownBenefit = new ArrayList<>();
-    private static Benefit benefit;
-
-    private Benefit() {
-
-    }
-
-    public static Benefit getBenefit() {
-        if (benefit == null) {
-            benefit = new Benefit();
-        }
-        return benefit;
-    }
+    private final List<String> ownBenefit = new ArrayList<>();
 
     public void addBenefit(String benefit) {
         ownBenefit.add(benefit);
