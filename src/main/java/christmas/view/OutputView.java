@@ -2,6 +2,7 @@ package christmas.view;
 
 import christmas.ChristmasBadge;
 import christmas.MenuBoard;
+import christmas.UserOrder;
 
 public class OutputView {
 
@@ -40,5 +41,9 @@ public class OutputView {
     public static void printSpecialDiscountAnnouncement() {
         System.out.println("특별 할인 이벤트가 적용됩니다!");
         System.out.println("총 주문 금액에서 1000원 할인");
+    }
+
+    public static void orderContent(UserOrder userOrder) {
+        System.out.println(userOrder);
     }
 }
