@@ -4,6 +4,7 @@ import christmas.menus.BeverageMenu;
 import christmas.validator.OrderValidator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class UserOrder {
     public final List<Menu> orders;
@@ -30,5 +31,12 @@ public class UserOrder {
                 map(order -> order.isBeverage(beverageCategory))
                 .filter(result -> !result)
                 .findFirst().orElse(true);
+    }
+
+    @Override
+    public String toString() {
+        StringJoiner stringJoiner = new StringJoiner(", ");
+        orders.forEach(order -> stringJoiner.add(order.toString()));
+        return stringJoiner.toString();
     }
 }
