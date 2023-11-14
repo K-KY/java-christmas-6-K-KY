@@ -1,6 +1,6 @@
-package christmas.validator;
+package christmas.domain.validator;
 
-import christmas.MenuBoard;
+import christmas.domain.MenuBoard;
 import java.util.List;
 
 public class OrderValidator {

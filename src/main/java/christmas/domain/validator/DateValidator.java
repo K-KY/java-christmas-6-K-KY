@@ -1,4 +1,4 @@
-package christmas.validator;
+package christmas.domain.validator;
 
 public class DateValidator {
 
