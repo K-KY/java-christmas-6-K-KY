@@ -2,10 +2,11 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.menus.AppetizerMenu;
-import christmas.menus.BeverageMenu;
-import christmas.menus.DessertMenu;
-import christmas.menus.MainMenu;
+import christmas.domain.MenuCategory;
+import christmas.domain.menus.AppetizerMenu;
+import christmas.domain.menus.BeverageMenu;
+import christmas.domain.menus.DessertMenu;
+import christmas.domain.menus.MainMenu;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
