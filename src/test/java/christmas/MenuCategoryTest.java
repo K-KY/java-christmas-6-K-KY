@@ -54,7 +54,7 @@ public class MenuCategoryTest {
         System.out.println(AppetizerMenu.getMenuCategory());
         assertThat(AppetizerMenu.getMenuCategory().toString())
                 .isEqualTo("<애피타이저>\n"
-                        + "양송이 수프(6,000), 타파스(5,500), 시저 샐러드(8,000)");
+                        + "타파스(5,500), 양송이수프(6,000), 시저샐러드(8,000)");
     }
 
     @Test
