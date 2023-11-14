@@ -22,4 +22,12 @@ public class Date {
 
         return futureDayOfWeek.getDisplayName(TextStyle.FULL, Locale.KOREAN);
     }
+
+    public boolean isBeforeChristmas() {
+        return date <= 25;
+    }
+
+    public int discount() {
+        return 1000 + ((date - 1) * 100);
+    }
 }
