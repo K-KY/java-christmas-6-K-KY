@@ -12,7 +12,10 @@ public class UserOrder {
         this.orders = orders;
         OrderValidator.isAmountInRange(checkAmount());
         OrderValidator.isOnlyBeverage(onlyBeverage());
-        orders.forEach(Menu::addPrice);
+    }
+
+    public void addMenuPrice(OrderedAmount orderedAmount) {
+        orders.forEach(order -> orderedAmount.addTotalAmount(order.getPrice()));
     }
 
     private int checkAmount() {
