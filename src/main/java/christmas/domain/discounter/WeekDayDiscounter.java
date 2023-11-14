@@ -14,6 +14,8 @@ public class WeekDayDiscounter {
     private static final String PRICE_FORMAT = "-###,###원";
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
     private static final MenuCategory dessertCategory = DessertMenu.getMenuCategory();
+    private static final String WEEK_DAY_DISCOUNT = "평일 할인: ";
+    private static final int DISCOUNT = 2023;
 
     public int discount(UserOrder userOrder, Benefit benefit) {
         List<Menu> orders = userOrder.orders;
@@ -21,8 +23,8 @@ public class WeekDayDiscounter {
         if (dessertCount == 0) {
             return 0;
         }
-        benefit.addBenefit("평일 할인: " + MONEY_FORMAT.format(2023 * dessertCount));
-        return (int) dessertCount * 2023;
+        benefit.addBenefit(WEEK_DAY_DISCOUNT + MONEY_FORMAT.format(DISCOUNT * dessertCount));
+        return (int) dessertCount * DISCOUNT;
     }
 
     private static long dessertCount(List<Menu> orders) {
