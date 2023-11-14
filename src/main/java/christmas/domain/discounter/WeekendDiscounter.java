@@ -16,6 +16,8 @@ public class WeekendDiscounter {
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
     public static final MenuCategory mainCategory = MainMenu.getMenuCategory();
     private static final List<Integer> amount = new ArrayList<>();
+    private static final String WEEKEND_DISCOUNT = "주말 할인: ";
+    private static final int DISCOUNT = 2023;
 
     public int discount(UserOrder userOrder, Benefit benefit) {
         List<Menu> orders = userOrder.orders;
@@ -23,8 +25,8 @@ public class WeekendDiscounter {
         if (mainCount == 0) {
             return 0;
         }
-        benefit.addBenefit("주말 할인: " + MONEY_FORMAT.format(2023 * mainCount));
-        return (int) mainCount * 2023;
+        benefit.addBenefit(WEEKEND_DISCOUNT + MONEY_FORMAT.format(DISCOUNT * mainCount));
+        return (int) mainCount * DISCOUNT;
     }
 
     private static long mainCount(List<Menu> orders) {
