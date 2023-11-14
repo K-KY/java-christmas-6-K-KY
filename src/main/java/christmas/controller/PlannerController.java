@@ -7,6 +7,7 @@ import christmas.domain.MenuBoard;
 import christmas.domain.MenuReceiver;
 import christmas.domain.OrderedAmount;
 import christmas.domain.UserOrder;
+import christmas.domain.week.Week;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 import java.util.List;
@@ -18,10 +19,17 @@ public class PlannerController {
 
     public void start() {
         Date date = callDate();
+        discountAnnouncement(date);
         UserOrder userOrder = callUserOrder();
         OutputView.orderContent(userOrder);
         userOrder.addMenuPrice(orderedAmount);
         result(date, userOrder);
+    }
+
+    private void discountAnnouncement(Date date) {
+        OutputView.printWeekDiscountAnnouncement(date.isWeekend());
+        OutputView.printChristMasDiscountAnnouncement(date);
+        OutputView.printSpecialDiscountAnnouncement(Week.isStared(date));
     }
 
     private UserOrder callUserOrder() {
