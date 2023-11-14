@@ -30,4 +30,8 @@ public class Date {
     public int discount() {
         return 1000 + ((date - 1) * 100);
     }
+
+    public boolean christmasDay() {
+        return date == 25;
+    }
 }
