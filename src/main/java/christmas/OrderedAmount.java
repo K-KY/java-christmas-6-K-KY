@@ -1,6 +1,10 @@
 package christmas;
 
+import java.text.DecimalFormat;
+
 public class OrderedAmount {
+    private static final String PRICE_FORMAT = "###,###원";
+    private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
 
     private static OrderedAmount orderedAmount;
     private static int totalAmount = 0;
@@ -27,5 +31,12 @@ public class OrderedAmount {
 
     public void discount(long discount) {
         totalDiscount -= discount;
+    }
+
+    public String totalAmount() {
+        return MONEY_FORMAT.format(totalAmount);
+    }
+    public String totalDiscount() {
+        return MONEY_FORMAT.format(totalDiscount);
     }
 }
