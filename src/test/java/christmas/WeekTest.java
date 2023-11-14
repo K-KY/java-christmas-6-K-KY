@@ -2,7 +2,7 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.week.Week;
+import christmas.domain.week.Week;
 import org.junit.jupiter.api.Test;
 
 public class WeekTest {
