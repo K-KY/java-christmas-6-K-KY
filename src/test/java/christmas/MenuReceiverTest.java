@@ -3,6 +3,7 @@ package christmas;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import christmas.domain.MenuReceiver;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
