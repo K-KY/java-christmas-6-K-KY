@@ -31,4 +31,11 @@ public class Menu {
     private int menuPrice() {
         return new MenuBoard().findPrice(menuName);
     }
+
+    public boolean isDessert(MenuCategory dessertCategory) {
+        return dessertCategory.isExist(menuName);
+    }
+    public boolean isMain(MenuCategory mainCategory) {
+        return mainCategory.isExist(menuName);
+    }
 }
