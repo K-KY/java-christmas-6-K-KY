@@ -5,17 +5,19 @@ import java.text.DecimalFormat;
 public class OrderedAmount {
     private static final String PRICE_FORMAT = "###,###원";
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
+    private static final int EVENT_CONDITION = 10000;
+    private static final int PRESENT_CONDITION = 120000;
 
     private static int totalAmount = 0;
     private static int totalDiscount = 0;
 
 
     public boolean isOverTenThousand() {
-        return totalAmount >= 10000;
+        return totalAmount >= EVENT_CONDITION;
     }
 
     public boolean present() {
-        return totalAmount >= 120000;
+        return totalAmount >= PRESENT_CONDITION;
     }
 
     public void addTotalAmount(int amount) {
@@ -39,9 +41,5 @@ public class OrderedAmount {
 
     public ChristmasBadge getBadge() {
         return ChristmasBadge.getBadge(totalAmount);
-    }
-
-    public boolean noDiscount() {
-        return totalDiscount == 0;
     }
 }
