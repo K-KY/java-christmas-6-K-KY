@@ -2,6 +2,7 @@ package christmas.view;
 
 import christmas.ChristmasBadge;
 import christmas.MenuBoard;
+import christmas.OrderedAmount;
 import christmas.UserOrder;
 
 public class OutputView {
@@ -18,7 +19,7 @@ public class OutputView {
 
     public static void badgeAnnouncement(ChristmasBadge badge) {
         if (badge != ChristmasBadge.NO_BADGE) {
-            System.out.println("고객님은 " + badge.getName(badge) +" 배지를 획득 하셨습니다!");
+            System.out.println("고객님은 " + badge.getName(badge) + " 배지를 획득 하셨습니다!");
             System.out.println("이후에 진행 될 새해 이벤트에서 배지에 따른 선물이 증정됩니다.");
         }
     }
@@ -35,7 +36,28 @@ public class OutputView {
 
     public static void printChristMasDiscountAnnouncement(int discount) {
         System.out.println("크리스마스 디데이 할인이 적용됩니다!");
-        System.out.println("10000원 이상 주문 하면 총금액에서 " + discount +"원 할인");
+        System.out.println("10000원 이상 주문 하면 총금액에서 " + discount + "원 할인");
+    }
+
+    public static void totalAmount() {
+        System.out.println("<할인 전 총주문 금액>");
+        OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
+        System.out.println(orderedAmount.totalAmount());
+        System.out.println();
+    }
+
+    public static void present(String present) {
+        if (present.length() != 0) {
+            System.out.println("<증정 메뉴>");
+            System.out.println(present);
+            System.out.println();
+        }
+    }
+
+    public static void totalDiscount() {
+        System.out.println("<총혜택 금액>");
+        OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
+        System.out.println(orderedAmount.totalDiscount());
     }
 
     public static void printSpecialDiscountAnnouncement() {
@@ -44,6 +66,25 @@ public class OutputView {
     }
 
     public static void orderContent(UserOrder userOrder) {
+        System.out.println("12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n");
+        System.out.println("<주문 메뉴>");
         System.out.println(userOrder);
     }
+
+    public static void discountHistory(String discount) {
+        if (discount.length() != 0) {
+            System.out.println(discount);
+        }
+    }
+
+    public static void afterDiscount(String afterDiscount) {
+        System.out.println("<할인 후 예상 결제 금액>");
+        System.out.println(afterDiscount);
+    }
+
+    public static void grantedBadge(ChristmasBadge badge) {
+        System.out.println("<12월 이벤트 배지>");
+        System.out.println(badge);
+    }
+
 }
