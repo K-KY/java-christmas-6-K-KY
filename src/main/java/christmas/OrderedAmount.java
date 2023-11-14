@@ -9,15 +9,18 @@ public class OrderedAmount {
     private static OrderedAmount orderedAmount;
     private static int totalAmount = 0;
     private static int totalDiscount = 0;
-    private OrderedAmount(){}
+
+    private OrderedAmount() {
+    }
 
     public static OrderedAmount getOrderedAmount(int amount) {
         if (orderedAmount == null) {
             orderedAmount = new OrderedAmount();
         }
-        totalAmount+= amount;
+        totalAmount += amount;
         return orderedAmount;
     }
+
     public static OrderedAmount getOrderedAmount() {
         if (orderedAmount == null) {
             orderedAmount = new OrderedAmount();
@@ -40,7 +43,20 @@ public class OrderedAmount {
     public String totalAmount() {
         return MONEY_FORMAT.format(totalAmount);
     }
+
     public String totalDiscount() {
         return MONEY_FORMAT.format(totalDiscount);
+    }
+
+    public String afterDiscount() {
+        return MONEY_FORMAT.format(totalAmount - totalDiscount);
+    }
+
+    public ChristmasBadge getBadge() {
+        return ChristmasBadge.getBadge(totalAmount);
+    }
+
+    public boolean noDiscount() {
+        return totalDiscount == 0;
     }
 }
