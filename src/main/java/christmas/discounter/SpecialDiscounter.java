@@ -9,10 +9,11 @@ public class SpecialDiscounter {
     public int discount(Date date) {
         String day = date.orderedDate();
         if (sunDayOrDay(date, day) && !conditionally) {
+            orderedAmount.discount(1000);
             return 1000;
         }
-
         if (sunDayOrDay(date, day) && orderedAmount.isOverTenThousand()) {
+            orderedAmount.discount(1000);
             return 1000;
         }
         return 0;
