@@ -1,12 +1,25 @@
 package christmas;
 
 import christmas.validator.DateValidator;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 public class Date {
+    private static final LocalDate eventStart = LocalDate.of(2023, 12, 1);
+
     private final int date;
 
     public Date(int date) {
         DateValidator.isInRange(date);
         this.date = date;
+    }
+
+    public static String orderedDate(int date) {
+        LocalDate orderedDate = eventStart.plusDays(date - 1);
+        DayOfWeek futureDayOfWeek = orderedDate.getDayOfWeek();
+
+        return futureDayOfWeek.getDisplayName(TextStyle.FULL, Locale.KOREAN);
     }
 }
