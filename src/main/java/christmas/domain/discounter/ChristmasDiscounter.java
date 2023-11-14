@@ -1,8 +1,8 @@
-package christmas.discounter;
+package christmas.domain.discounter;
 
-import christmas.Benefit;
-import christmas.Date;
-import christmas.OrderedAmount;
+import christmas.domain.Benefit;
+import christmas.domain.Date;
+import christmas.domain.OrderedAmount;
 import java.text.DecimalFormat;
 
 public class ChristmasDiscounter {

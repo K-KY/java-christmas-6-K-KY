@@ -1,6 +1,6 @@
-package christmas.discounter;
+package christmas.domain.discounter;
 
-import christmas.OrderedAmount;
+import christmas.domain.OrderedAmount;
 
 public class PresentDiscounter {
     OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
