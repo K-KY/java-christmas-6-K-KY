@@ -35,8 +35,8 @@ public class UserOrder {
 
     @Override
     public String toString() {
-        StringJoiner stringJoiner = new StringJoiner(", ");
-        orders.forEach(order -> stringJoiner.add(order.toString()));
-        return stringJoiner.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        orders.forEach(order -> stringBuilder.append(order.toString()));
+        return stringBuilder.toString();
     }
 }
