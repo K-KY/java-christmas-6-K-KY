@@ -6,6 +6,9 @@ import christmas.domain.validator.DateValidator;
 
 public class InputView {
 
+    private static final String SPACE = " ";
+    private static final String LENGTH_ZERO = "";
+
     public static int visitDate() {
         OutputView.startMessage();
         String input = Console.readLine();
@@ -17,6 +20,6 @@ public class InputView {
         OutputView.menuAndAmount(menuBoard);
         String input = Console.readLine();
 
-        return input.replace(" ", "");
+        return input.replace(SPACE, LENGTH_ZERO);
     }
 }
