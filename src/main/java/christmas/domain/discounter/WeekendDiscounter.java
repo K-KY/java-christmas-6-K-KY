@@ -16,17 +16,15 @@ public class WeekendDiscounter {
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
     public static final MenuCategory mainCategory = MainMenu.getMenuCategory();
     private static final List<Integer> amount = new ArrayList<>();
-    private static final OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-    private static final Benefit benefit = Benefit.getBenefit();
 
-    public void discount(UserOrder userOrder) {
+    public int discount(UserOrder userOrder, Benefit benefit) {
         List<Menu> orders = userOrder.orders;
         long mainCount = mainCount(orders);
         if (mainCount == 0) {
-            return;
+            return 0;
         }
-        orderedAmount.discount(mainCount * 2023);
         benefit.addBenefit("주말 할인: " + MONEY_FORMAT.format(2023 * mainCount));
+        return (int) mainCount * 2023;
     }
 
     private static long mainCount(List<Menu> orders) {
