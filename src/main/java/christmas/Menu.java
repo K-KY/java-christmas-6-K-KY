@@ -38,4 +38,9 @@ public class Menu {
     public boolean isMain(MenuCategory mainCategory) {
         return mainCategory.isExist(menuName);
     }
+
+    @Override
+    public String toString() {
+        return menuName + amount + " 개";
+    }
 }
