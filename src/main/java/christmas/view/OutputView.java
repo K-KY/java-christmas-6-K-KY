@@ -39,10 +39,9 @@ public class OutputView {
         System.out.println("10000원 이상 주문 하면 총금액에서 " + discount + "원 할인");
     }
 
-    public static void totalAmount() {
+    public static void totalAmount(String totalAmount) {
         System.out.println("<할인 전 총주문 금액>");
-        OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-        System.out.println(orderedAmount.totalAmount());
+        System.out.println(totalAmount);
         System.out.println();
     }
 
@@ -56,10 +55,9 @@ public class OutputView {
         System.out.println("없음");
     }
 
-    public static void totalDiscount() {
+    public static void totalDiscount(String totalDiscount) {
         System.out.println("<총혜택 금액>");
-        OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-        System.out.println(orderedAmount.totalDiscount());
+        System.out.println(totalDiscount);
     }
 
     public static void printSpecialDiscountAnnouncement() {
