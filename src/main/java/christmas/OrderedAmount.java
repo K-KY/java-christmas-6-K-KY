@@ -29,6 +29,10 @@ public class OrderedAmount {
         return totalAmount >= 10000;
     }
 
+    public boolean present() {
+        return totalAmount >= 120000;
+    }
+
     public void discount(long discount) {
         totalDiscount -= discount;
     }
