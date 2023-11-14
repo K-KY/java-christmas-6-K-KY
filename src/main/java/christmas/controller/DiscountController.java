@@ -11,6 +11,7 @@ import christmas.domain.discounter.WeekendDiscounter;
 
 public class DiscountController {
 
+    private static final int ZERO = 0;
     private final OrderedAmount orderedAmount;
     private final Benefit benefit = new Benefit();
 
@@ -31,7 +32,7 @@ public class DiscountController {
         if (orderedAmount.isOverTenThousand()) {
             return weekendDiscount(weekend, userOrder);
         }
-        return 0;
+        return ZERO;
     }
 
     private int weekendDiscount(boolean weekend, UserOrder userOrder) {
