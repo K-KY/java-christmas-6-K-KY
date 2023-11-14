@@ -16,15 +16,16 @@ public enum ChristmasBadge {
         this.badgeName = badgeName;
     }
 
-    public static ChristmasBadge getBadge(int point) {
+    public static ChristmasBadge getBadge(int amount) {
         List<ChristmasBadge> badges = List.of(ChristmasBadge.values());
         return badges.stream()
-                .filter(badge -> badge.point == point)
+                .filter(badge -> badge.point <= amount)
                 .findFirst()
                 .orElse(NO_BADGE);
     }
 
-    public String getName(ChristmasBadge badge) {
-        return badge.badgeName;
+
+    public String getName() {
+        return badgeName;
     }
 }
