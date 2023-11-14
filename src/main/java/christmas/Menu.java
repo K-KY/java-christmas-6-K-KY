@@ -41,6 +41,6 @@ public class Menu {
 
     @Override
     public String toString() {
-        return menuName + amount + " 개";
+        return menuName + " "+ amount + "개" + "\n";
     }
 }
