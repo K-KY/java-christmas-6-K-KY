@@ -1,7 +1,7 @@
-package christmas;
+package christmas.domain;
 
-import christmas.validator.DateValidator;
-import christmas.week.Week;
+import christmas.domain.validator.DateValidator;
+import christmas.domain.week.Week;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.TextStyle;

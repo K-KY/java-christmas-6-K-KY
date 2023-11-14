@@ -1,9 +1,9 @@
-package christmas;
+package christmas.domain;
 
-import christmas.menus.AppetizerMenu;
-import christmas.menus.BeverageMenu;
-import christmas.menus.DessertMenu;
-import christmas.menus.MainMenu;
+import christmas.domain.menus.AppetizerMenu;
+import christmas.domain.menus.BeverageMenu;
+import christmas.domain.menus.DessertMenu;
+import christmas.domain.menus.MainMenu;
 import java.util.ArrayList;
 import java.util.List;
 
