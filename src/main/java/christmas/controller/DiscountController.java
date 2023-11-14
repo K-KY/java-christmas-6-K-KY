@@ -21,10 +21,10 @@ public class DiscountController {
 
     public Benefit calculateDiscount(Date date, UserOrder userOrder) {
         boolean weekend = date.isWeekend();
-        int weekDiscount = weekDiscount(userOrder, weekend);
-        int specialDiscount = specialDiscount(date);
-        int christmasDiscount = christmasDiscount(date);
-        orderedAmount.discount(weekDiscount + specialDiscount + christmasDiscount);
+        orderedAmount.discount(
+                weekDiscount(userOrder, weekend)
+                        + specialDiscount(date)
+                        + christmasDiscount(date));
         return benefit;
     }
 
