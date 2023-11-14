@@ -4,7 +4,6 @@ import christmas.menus.BeverageMenu;
 import christmas.validator.OrderValidator;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
 
 public class UserOrder {
     public final List<Menu> orders;
