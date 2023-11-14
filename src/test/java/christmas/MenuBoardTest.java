@@ -2,6 +2,7 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import christmas.domain.MenuBoard;
 import org.junit.jupiter.api.Test;
 
 public class MenuBoardTest {
