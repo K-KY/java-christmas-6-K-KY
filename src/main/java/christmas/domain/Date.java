@@ -8,7 +8,13 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class Date {
-    private static final LocalDate eventStart = LocalDate.of(2023, 12, 1);
+    private static final int YEAR = 2023;
+    private static final int MONTH = 12;
+    private static final int DAY = 1;
+    private static final LocalDate eventStart = LocalDate.of(YEAR, MONTH, DAY);
+    private static final int CHRISTMAS_DAY = 25;
+    private static final int INCREASE = 100;
+    private static final int DEFAULT_DISCOUNT = 1000;
 
     private final int date;
 
@@ -18,22 +24,22 @@ public class Date {
     }
 
     public String orderedDate() {
-        LocalDate orderedDate = eventStart.plusDays(date - 1);
+        LocalDate orderedDate = eventStart.plusDays(date - DAY);
         DayOfWeek futureDayOfWeek = orderedDate.getDayOfWeek();
 
         return futureDayOfWeek.getDisplayName(TextStyle.FULL, Locale.KOREAN);
     }
 
     public boolean isBeforeChristmas() {
-        return date <= 25;
+        return date <= CHRISTMAS_DAY;
     }
 
     public int discount() {
-        return 1000 + ((date - 1) * 100);
+        return DEFAULT_DISCOUNT + ((date - DAY) * INCREASE);
     }
 
     public boolean christmasDay() {
-        return date == 25;
+        return date == CHRISTMAS_DAY;
     }
 
     public boolean isWeekend() {
