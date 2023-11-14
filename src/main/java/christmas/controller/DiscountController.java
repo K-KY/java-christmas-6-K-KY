@@ -1,9 +1,12 @@
-package christmas;
+package christmas.controller;
 
-import christmas.discounter.ChristmasDiscounter;
-import christmas.discounter.SpecialDiscounter;
-import christmas.discounter.WeekDayDiscounter;
-import christmas.discounter.WeekendDiscounter;
+import christmas.domain.Date;
+import christmas.domain.OrderedAmount;
+import christmas.domain.UserOrder;
+import christmas.domain.discounter.ChristmasDiscounter;
+import christmas.domain.discounter.SpecialDiscounter;
+import christmas.domain.discounter.WeekDayDiscounter;
+import christmas.domain.discounter.WeekendDiscounter;
 
 public class DiscountController {
 

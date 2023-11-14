@@ -1,13 +1,15 @@
-package christmas;
+package christmas.controller;
 
-import christmas.discounter.ChristmasDiscounter;
-import christmas.discounter.PresentDiscounter;
-import christmas.discounter.SpecialDiscounter;
-import christmas.discounter.WeekDayDiscounter;
-import christmas.discounter.WeekendDiscounter;
+import christmas.domain.discounter.PresentDiscounter;
+import christmas.domain.Benefit;
+import christmas.domain.Date;
+import christmas.domain.MenuBoard;
+import christmas.domain.MenuReceiver;
+import christmas.domain.OrderedAmount;
+import christmas.domain.UserOrder;
 import christmas.view.InputView;
 import christmas.view.OutputView;
-import christmas.week.Week;
+import christmas.domain.week.Week;
 import java.util.List;
 
 public class PlannerController {
