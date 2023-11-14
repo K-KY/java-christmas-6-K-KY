@@ -1,4 +1,4 @@
-package christmas.week;
+package christmas.domain.week;
 
 import java.util.List;
 import java.util.Objects;
