@@ -1,4 +1,4 @@
-package christmas.menus;
+package christmas.domain.menus;
 /*<애피타이저>
 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)
 
@@ -12,7 +12,7 @@ package christmas.menus;
 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 */
 
-import christmas.MenuCategory;
+import christmas.domain.MenuCategory;
 import java.util.HashMap;
 import java.util.List;
 

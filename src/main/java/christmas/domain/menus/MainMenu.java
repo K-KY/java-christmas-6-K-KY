@@ -1,6 +1,6 @@
-package christmas.menus;
+package christmas.domain.menus;
 
-import christmas.MenuCategory;
+import christmas.domain.MenuCategory;
 import java.util.HashMap;
 import java.util.List;
 
