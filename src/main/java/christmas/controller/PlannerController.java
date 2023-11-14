@@ -9,27 +9,19 @@ import christmas.domain.OrderedAmount;
 import christmas.domain.UserOrder;
 import christmas.view.InputView;
 import christmas.view.OutputView;
-import christmas.domain.week.Week;
 import java.util.List;
 
 public class PlannerController {
     private static final MenuBoard menuBoard = new MenuBoard();
-    private static final OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
+    private static final OrderedAmount orderedAmount = new OrderedAmount();
 
     public void start() {
         Date date = callDate();
         UserOrder userOrder = callUserOrder();
-        boolean weekend = Week.isWeekend(date.orderedDate());
         OutputView.orderContent(userOrder);
-        OutputView.totalAmount();
-        OutputView.present(presentDiscount());
-        new DiscountController().calculateDiscount(date, userOrder);
-        OutputView.discountHistory(Benefit.getBenefit().toString());;
-        OutputView.totalDiscount();
-        OutputView.afterDiscount(orderedAmount.afterDiscount());
-        OutputView.grantedBadge(orderedAmount.getBadge());
+        userOrder.addMenuPrice(orderedAmount);
+        result(date, userOrder);
     }
-
 
     private UserOrder callUserOrder() {
         UserOrder userOrder;
@@ -56,10 +48,18 @@ public class PlannerController {
         return date;
     }
 
-
+    private void result(Date date, UserOrder userOrder) {
+        OutputView.totalAmount(orderedAmount.totalAmount());
+        OutputView.present(presentDiscount());
+        Benefit benefit = new DiscountController(orderedAmount).calculateDiscount(date, userOrder);
+        OutputView.discountHistory(benefit.toString());
+        OutputView.totalDiscount(orderedAmount.totalDiscount());
+        OutputView.afterDiscount(orderedAmount.afterDiscount());
+        OutputView.grantedBadge(orderedAmount.getBadge());
+    }
 
     private String presentDiscount() {
-        PresentDiscounter presentDiscounter = new PresentDiscounter();
+        PresentDiscounter presentDiscounter = new PresentDiscounter(orderedAmount);
         return presentDiscounter.discount();
     }
 }
