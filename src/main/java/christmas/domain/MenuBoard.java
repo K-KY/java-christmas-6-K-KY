@@ -10,6 +10,7 @@ import java.util.List;
 public class MenuBoard {
     private static final List<MenuCategory> menuCategories = new ArrayList<>();
     private static final String NEW_LINE = "\n";
+    private static final int DEFAULT = 0;
 
     public MenuBoard() {
         if (menuCategories.isEmpty()) {
@@ -43,7 +44,7 @@ public class MenuBoard {
     public int findPrice(String menuName) {
         return menuCategories.stream()
                 .map(menuCategory -> menuCategory.findPrice(menuName))
-                .filter(result -> result != 0)
-                .findFirst().orElse(0);
+                .filter(result -> result != DEFAULT)
+                .findFirst().orElse(DEFAULT);
     }
 }
