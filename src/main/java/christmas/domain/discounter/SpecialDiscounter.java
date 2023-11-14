@@ -3,6 +3,7 @@ package christmas.domain.discounter;
 import christmas.domain.Benefit;
 import christmas.domain.Date;
 import christmas.domain.OrderedAmount;
+import christmas.domain.week.Week;
 import java.text.DecimalFormat;
 
 public class SpecialDiscounter {
@@ -21,19 +22,18 @@ public class SpecialDiscounter {
     }
 
     public int discount(Date date, Benefit benefit) {
-        String day = date.orderedDate();
-        if (sundayOrDay(date, day) && !conditionally) {
+        if (sundayOrDay(date) && !conditionally) {
             benefit.addBenefit(SPECIAL_DISCOUNT + MONEY_FORMAT.format(DISCOUNT));
             return DISCOUNT;
         }
-        if (sundayOrDay(date, day) && orderedAmount.isOverTenThousand()) {
+        if (sundayOrDay(date) && orderedAmount.isOverTenThousand()) {
             benefit.addBenefit(SPECIAL_DISCOUNT + MONEY_FORMAT.format(DISCOUNT));
             return DISCOUNT;
         }
         return DEFAULT;
     }
 
-    public static boolean sundayOrDay(Date date, String day) {
-        return day.equals(SUNDAY) || date.christmasDay();
+    public static boolean sundayOrDay(Date date) {
+        return Week.isStared(date);
     }
 }
