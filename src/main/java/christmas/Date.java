@@ -1,6 +1,7 @@
 package christmas;
 
 import christmas.validator.DateValidator;
+import christmas.week.Week;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
@@ -33,5 +34,9 @@ public class Date {
 
     public boolean christmasDay() {
         return date == 25;
+    }
+
+    public boolean isWeekend() {
+        return Week.isWeekend(orderedDate());
     }
 }
