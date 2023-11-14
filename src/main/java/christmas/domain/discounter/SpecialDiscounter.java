@@ -8,20 +8,25 @@ import java.text.DecimalFormat;
 public class SpecialDiscounter {
     private static final String PRICE_FORMAT = "-###,###원";
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
-    private static final OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-    private static final Benefit benefit = Benefit.getBenefit();
+
     private static boolean conditionally = false; // true 일 때 총 금액이 만원 이상
-    public void discount(Date date) {
+    private final OrderedAmount orderedAmount;
+
+    public SpecialDiscounter(OrderedAmount orderedAmount) {
+        this.orderedAmount = orderedAmount;
+    }
+
+    public int discount(Date date, Benefit benefit) {
         String day = date.orderedDate();
         if (sunDayOrDay(date, day) && !conditionally) {
-            orderedAmount.discount(1000);
             benefit.addBenefit("특별 할인: " + MONEY_FORMAT.format(1000));
-            return;
+            return 1000;
         }
         if (sunDayOrDay(date, day) && orderedAmount.isOverTenThousand()) {
-            orderedAmount.discount(1000);
             benefit.addBenefit("특별 할인: " + MONEY_FORMAT.format(1000));
+            return 1000;
         }
+        return 0;
     }
 
     private static boolean sunDayOrDay(Date date, String day) {
