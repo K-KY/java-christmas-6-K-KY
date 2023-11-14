@@ -1,5 +1,6 @@
 package christmas.domain.week;
 
+import christmas.domain.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,5 +26,13 @@ public enum Week {
         return Objects.requireNonNull(weeks.stream()
                 .filter(week -> week.day.equals(day))
                 .findFirst().orElse(null)).weekend;
+    }
+    private static boolean isSunday(Date date) {
+        String sunday = SUNDAY.day;
+        String orderedDate = date.orderedDate();
+        return sunday.equals(orderedDate);
+    }
+    public static boolean isStared(Date date) {
+        return date.christmasDay() || isSunday(date);
     }
 }
