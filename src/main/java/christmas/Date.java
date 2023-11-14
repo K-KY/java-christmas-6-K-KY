@@ -16,7 +16,7 @@ public class Date {
         this.date = date;
     }
 
-    public static String orderedDate(int date) {
+    public String orderedDate() {
         LocalDate orderedDate = eventStart.plusDays(date - 1);
         DayOfWeek futureDayOfWeek = orderedDate.getDayOfWeek();
 
