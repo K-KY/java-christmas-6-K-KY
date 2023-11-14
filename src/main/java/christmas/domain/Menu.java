@@ -4,6 +4,9 @@ import christmas.domain.validator.OrderValidator;
 import java.util.List;
 
 public class Menu {
+    private static final String SPACE = " ";
+    private static final String MENU_AMOUNT = "개";
+    private static final String NEW_LINE = "\n";
     private final String menuName;
     private final int amount;
 
@@ -41,6 +44,6 @@ public class Menu {
 
     @Override
     public String toString() {
-        return menuName + " "+ amount + "개" + "\n";
+        return menuName + SPACE + amount + MENU_AMOUNT + NEW_LINE;
     }
 }
