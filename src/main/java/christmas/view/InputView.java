@@ -1,8 +1,8 @@
 package christmas.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import christmas.MenuBoard;
-import christmas.validator.DateValidator;
+import christmas.domain.MenuBoard;
+import christmas.domain.validator.DateValidator;
 
 public class InputView {
 

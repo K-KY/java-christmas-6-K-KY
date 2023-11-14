@@ -1,9 +1,9 @@
 package christmas.view;
 
-import christmas.ChristmasBadge;
-import christmas.MenuBoard;
-import christmas.OrderedAmount;
-import christmas.UserOrder;
+import christmas.domain.ChristmasBadge;
+import christmas.domain.MenuBoard;
+import christmas.domain.OrderedAmount;
+import christmas.domain.UserOrder;
 
 public class OutputView {
 
