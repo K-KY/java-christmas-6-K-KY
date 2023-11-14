@@ -47,6 +47,6 @@ public class MenuCategory {
     }
 
     public int findPrice(String menuName) {
-        return menuBoard.getOrDefault(menuName, 0);
+        return menuBoard.getOrDefault(menuName, CLEAR);
     }
 }
