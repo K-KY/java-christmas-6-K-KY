@@ -14,6 +14,7 @@ import java.util.List;
 public class PlannerController {
     private static final MenuBoard menuBoard = new MenuBoard();
     private static final OrderedAmount orderedAmount = new OrderedAmount();
+    private static final String COMMA = ",";
 
     public void start() {
         Date date = callDate();
@@ -27,7 +28,7 @@ public class PlannerController {
         UserOrder userOrder;
         try {
             String userMenu = InputView.orderMenu(menuBoard);
-            MenuReceiver menuReceiver = new MenuReceiver(List.of(userMenu.split(",")));
+            MenuReceiver menuReceiver = new MenuReceiver(List.of(userMenu.split(COMMA)));
             userOrder = menuReceiver.receive();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
