@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.Benefit;
 import christmas.domain.Date;
 import christmas.domain.OrderedAmount;
 import christmas.domain.UserOrder;
@@ -10,44 +11,49 @@ import christmas.domain.discounter.WeekendDiscounter;
 
 public class DiscountController {
 
+    private final OrderedAmount orderedAmount;
+    private final Benefit benefit = new Benefit();
 
-    private static final OrderedAmount orderedAmount = OrderedAmount.getOrderedAmount();
-    public void calculateDiscount(Date date, UserOrder userOrder) {
+    public DiscountController(OrderedAmount orderedAmount) {
+        this.orderedAmount = orderedAmount;
+    }
+
+    public Benefit calculateDiscount(Date date, UserOrder userOrder) {
         boolean weekend = date.isWeekend();
-        weekDiscount(userOrder, weekend);
-        specialDiscount(date);
-        christmasDiscount(date);
-
+        int weekDiscount = weekDiscount(userOrder, weekend);
+        int specialDiscount = specialDiscount(date);
+        int christmasDiscount = christmasDiscount(date);
+        orderedAmount.discount(weekDiscount + specialDiscount + christmasDiscount);
+        return benefit;
     }
 
-    private void weekDiscount(UserOrder userOrder, boolean weekend) {
+    private int weekDiscount(UserOrder userOrder, boolean weekend) {
         if (orderedAmount.isOverTenThousand()) {
-            weekendDiscount(weekend, userOrder);
+            return weekendDiscount(weekend, userOrder);
         }
+        return 0;
     }
 
-    private void weekendDiscount(boolean weekend, UserOrder userOrder) {
+    private int weekendDiscount(boolean weekend, UserOrder userOrder) {
         if (weekend) {
             WeekendDiscounter weekendDiscounter = new WeekendDiscounter();
-            weekendDiscounter.discount(userOrder);
+            return weekendDiscounter.discount(userOrder, benefit);
         }
-        weekDayDiscount(userOrder);
+        return weekDayDiscount(userOrder);
     }
 
-    private void weekDayDiscount(UserOrder userOrder) {
+    private int weekDayDiscount(UserOrder userOrder) {
         WeekDayDiscounter weekDayDiscounter = new WeekDayDiscounter();
-        weekDayDiscounter.discount(userOrder);
+        return weekDayDiscounter.discount(userOrder, benefit);
     }
 
-    private void specialDiscount(Date date) {
-        SpecialDiscounter specialDiscounter = new SpecialDiscounter();
-        specialDiscounter.discount(date);
+    private int specialDiscount(Date date) {
+        SpecialDiscounter specialDiscounter = new SpecialDiscounter(orderedAmount);
+        return specialDiscounter.discount(date, benefit);
     }
 
-    private void christmasDiscount(Date date) {
-        ChristmasDiscounter christmasDiscounter = new ChristmasDiscounter();
-        christmasDiscounter.discount(date);
+    private int christmasDiscount(Date date) {
+        ChristmasDiscounter christmasDiscounter = new ChristmasDiscounter(orderedAmount);
+        return christmasDiscounter.discount(date, benefit);
     }
-
-
 }
