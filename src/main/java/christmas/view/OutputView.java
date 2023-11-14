@@ -47,11 +47,13 @@ public class OutputView {
     }
 
     public static void present(String present) {
+        System.out.println("<증정 메뉴>");
         if (present.length() != 0) {
-            System.out.println("<증정 메뉴>");
             System.out.println(present);
             System.out.println();
+            return;
         }
+        System.out.println("없음");
     }
 
     public static void totalDiscount() {
@@ -72,9 +74,12 @@ public class OutputView {
     }
 
     public static void discountHistory(String discount) {
+        System.out.println("<혜택 내역>");
         if (discount.length() != 0) {
             System.out.println(discount);
+            return;
         }
+        System.out.println("없음");
     }
 
     public static void afterDiscount(String afterDiscount) {
@@ -84,6 +89,10 @@ public class OutputView {
 
     public static void grantedBadge(ChristmasBadge badge) {
         System.out.println("<12월 이벤트 배지>");
+        if (badge.toString().equals("NO_BADGE")) {
+            System.out.println("없음");
+            return;
+        }
         System.out.println(badge);
     }
 
