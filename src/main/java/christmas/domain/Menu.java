@@ -22,9 +22,8 @@ public class Menu {
         return menuPrice() * amount;
     }
 
-    public List<Integer> addAmount(List<Integer> amounts) {
+    public void addAmount(List<Integer> amounts) {
         amounts.add(amount);
-        return amounts;
     }
 
     public boolean isBeverage(MenuCategory beverageCategory) {
@@ -38,6 +37,7 @@ public class Menu {
     public boolean isDessert(MenuCategory dessertCategory) {
         return dessertCategory.isExist(menuName);
     }
+
     public boolean isMain(MenuCategory mainCategory) {
         return mainCategory.isExist(menuName);
     }
