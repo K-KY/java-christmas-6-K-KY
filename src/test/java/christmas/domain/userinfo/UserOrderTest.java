@@ -1,10 +1,10 @@
-package christmas;
+package christmas.domain.userinfo;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import christmas.domain.Menu;
-import christmas.domain.UserOrder;
+import christmas.domain.orderinfo.UserOrder;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 

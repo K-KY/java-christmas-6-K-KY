@@ -1,5 +1,7 @@
-package christmas.domain;
+package christmas.domain.orderinfo;
 
+import christmas.domain.Menu;
+import christmas.domain.MenuCategory;
 import christmas.domain.menus.BeverageMenu;
 import christmas.domain.validator.OrderValidator;
 import java.util.ArrayList;

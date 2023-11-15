@@ -1,5 +1,6 @@
-package christmas.domain;
+package christmas.domain.orderinfo;
 
+import christmas.domain.ChristmasBadge;
 import java.text.DecimalFormat;
 
 public class OrderedAmount {
