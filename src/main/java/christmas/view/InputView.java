@@ -5,7 +5,6 @@ import christmas.domain.MenuBoard;
 import christmas.domain.validator.DateValidator;
 
 public class InputView {
-
     private static final String SPACE = " ";
     private static final String LENGTH_ZERO = "";
 
