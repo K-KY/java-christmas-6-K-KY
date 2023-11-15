@@ -1,4 +1,4 @@
-package christmas.domain.userinfo;
+package christmas.domain.oderinfo;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
