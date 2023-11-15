@@ -1,9 +1,8 @@
-package christmas.validator;
+package christmas.domain.validator;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import christmas.domain.validator.OrderValidator;
 import org.junit.jupiter.api.Test;
 
 public class OrderValidateTest {

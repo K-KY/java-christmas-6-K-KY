@@ -1,4 +1,4 @@
-package christmas.validator;
+package christmas.domain.validator;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -21,11 +21,13 @@ class DateValidatorTest {
     }
 
     @Test
+    @DisplayName("숫자가 1~31 사이라면 통과")
     void isInRange_True() {
         assertThatCode(() -> DateValidator.isInRange(31)).doesNotThrowAnyException();
     }
 
     @Test
+    @DisplayName("숫자가 31을 넘어가면 예외")
     void isInRange_False() {
         assertThatThrownBy(() -> DateValidator.isInRange(32)).isInstanceOf(IllegalArgumentException.class);
     }
