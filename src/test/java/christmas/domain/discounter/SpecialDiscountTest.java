@@ -1,11 +1,10 @@
-package christmas.discounter;
+package christmas.domain.discounter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.domain.Benefit;
 import christmas.domain.Date;
 import christmas.domain.OrderedAmount;
-import christmas.domain.discounter.SpecialDiscounter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
