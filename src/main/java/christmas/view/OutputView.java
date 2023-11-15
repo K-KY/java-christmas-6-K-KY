@@ -75,7 +75,7 @@ public class OutputView {
     public static void printChristMasDiscountAnnouncement(Date date) {
         if (date.isBeforeChristmas()) {
             System.out.println(CHRISTMAS_DISCOUNT);
-            System.out.println(IF_ORDER_TEN_THOUSAND + date.discount() + DISCOUNT);
+            System.out.println(IF_ORDER_TEN_THOUSAND + date.christmasDiscount() + DISCOUNT);
             System.out.println();
         }
     }
