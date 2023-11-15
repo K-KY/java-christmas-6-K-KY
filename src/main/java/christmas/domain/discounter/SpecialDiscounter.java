@@ -12,7 +12,7 @@ public class SpecialDiscounter {
     private static final String SPECIAL_DISCOUNT = "특별 할인: ";
     private static final int DISCOUNT = 1000;
     private static final int DEFAULT = 0;
-    private static final boolean conditionally = false; // true 일 때 총 금액이 만원 이상
+    private static final boolean conditionally = true; // true 일 때 총 금액이 만원 이상
     private final OrderedAmount orderedAmount;
 
     public SpecialDiscounter(OrderedAmount orderedAmount) {
