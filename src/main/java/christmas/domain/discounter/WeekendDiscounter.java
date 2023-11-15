@@ -8,7 +8,6 @@ import christmas.domain.menus.MainMenu;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class WeekendDiscounter {
     private static final String PRICE_FORMAT = "-###,###원";
