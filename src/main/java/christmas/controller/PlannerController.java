@@ -14,8 +14,8 @@ import java.util.List;
 
 public class PlannerController {
     private static final MenuBoard menuBoard = new MenuBoard();
-    private static final OrderedAmount orderedAmount = new OrderedAmount();
     private static final String COMMA = ",";
+    private final OrderedAmount orderedAmount = new OrderedAmount();
 
     public void start() {
         Date date = callDate();
