@@ -28,4 +28,8 @@ public enum ChristmasBadge {
     public String getName() {
         return badgeName;
     }
+
+    public boolean isBadge() {
+        return this == NO_BADGE;
+    }
 }
