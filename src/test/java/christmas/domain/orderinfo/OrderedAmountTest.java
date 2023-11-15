@@ -33,6 +33,7 @@ class OrderedAmountTest {
     }
 
     @Test
+    @DisplayName("입력된 만큼 금액을 더하고 한국돈 형식으로 리턴한다")
     void addTotalAmount() {
         orderedAmount = new OrderedAmount();
         orderedAmount.addTotalAmount(9999);
@@ -42,23 +43,27 @@ class OrderedAmountTest {
     }
 
     @Test
+    @DisplayName("입력된 만큼 금액을 빼고 한국돈 형식으로 리턴한다")
     void discount() {
         orderedAmount.discount(10000);
         assertThat(orderedAmount.totalDiscount()).isEqualTo("-10,000원");
     }
 
     @Test
+    @DisplayName("총금액을 한국돈 형식으로 리턴한다")
     void totalAmount() {
         assertThat(orderedAmount.totalAmount()).isEqualTo("10,000원");
     }
 
     @Test
+    @DisplayName("총금액과 할인 금액을 더한 값을 한국돈 형식으로 리턴한다")
     void afterDiscount() {
         orderedAmount.discount(10);
         assertThat(orderedAmount.afterDiscount()).isEqualTo("9,990원");
     }
 
     @Test
+    @DisplayName("금액에 맞는 배지를 리턴한다")
     void getBadge() {
         assertThat(orderedAmount.getBadge().getName()).isEqualTo("트리");
     }
