@@ -31,8 +31,7 @@ public class WeekDayDiscounter {
         List<Integer> amount = new ArrayList<>();
         orders.stream()
                 .filter(order -> order.isDessert(dessertCategory))
-                .map(order -> order.addAmount(amount))
-                .collect(Collectors.toList());
+                .forEach(menu -> menu.addAmount(amount));
         return amount.stream().mapToInt(Integer::intValue).sum();
     }
 
