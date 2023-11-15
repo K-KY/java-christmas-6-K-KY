@@ -1,6 +1,6 @@
 package christmas.domain.discounter;
 
-import christmas.domain.OrderedAmount;
+import christmas.domain.orderinfo.OrderedAmount;
 
 public class PresentDiscounter {
     private static final String PRESENT = "샴페인 1개";

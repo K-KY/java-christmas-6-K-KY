@@ -1,9 +1,9 @@
 package christmas.controller;
 
-import christmas.domain.Benefit;
-import christmas.domain.Date;
-import christmas.domain.OrderedAmount;
-import christmas.domain.UserOrder;
+import christmas.domain.orderinfo.Benefit;
+import christmas.domain.orderinfo.Date;
+import christmas.domain.orderinfo.OrderedAmount;
+import christmas.domain.orderinfo.UserOrder;
 import christmas.domain.discounter.ChristmasDiscounter;
 import christmas.domain.discounter.SpecialDiscounter;
 import christmas.domain.discounter.WeekDayDiscounter;

@@ -1,12 +1,12 @@
 package christmas.controller;
 
 import christmas.domain.discounter.PresentDiscounter;
-import christmas.domain.Benefit;
-import christmas.domain.Date;
+import christmas.domain.orderinfo.Benefit;
+import christmas.domain.orderinfo.Date;
 import christmas.domain.MenuBoard;
 import christmas.domain.MenuReceiver;
-import christmas.domain.OrderedAmount;
-import christmas.domain.UserOrder;
+import christmas.domain.orderinfo.OrderedAmount;
+import christmas.domain.orderinfo.UserOrder;
 import christmas.domain.week.Week;
 import christmas.view.InputView;
 import christmas.view.OutputView;

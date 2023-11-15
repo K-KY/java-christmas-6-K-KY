@@ -1,6 +1,6 @@
 package christmas.domain.week;
 
-import christmas.domain.Date;
+import christmas.domain.orderinfo.Date;
 import java.util.List;
 import java.util.Objects;
 

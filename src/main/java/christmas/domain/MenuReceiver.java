@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import christmas.domain.orderinfo.UserOrder;
 import christmas.domain.validator.OrderValidator;
 import java.util.ArrayList;
 import java.util.List;

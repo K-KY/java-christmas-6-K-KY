@@ -1,10 +1,9 @@
 package christmas.domain.discounter;
 
-import christmas.domain.Benefit;
+import christmas.domain.orderinfo.Benefit;
 import christmas.domain.Menu;
 import christmas.domain.MenuCategory;
-import christmas.domain.OrderedAmount;
-import christmas.domain.UserOrder;
+import christmas.domain.orderinfo.UserOrder;
 import christmas.domain.menus.MainMenu;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
