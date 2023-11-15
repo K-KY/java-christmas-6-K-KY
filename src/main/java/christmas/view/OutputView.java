@@ -33,6 +33,7 @@ public class OutputView {
     private static final String AFTER_DISCOUNT = "<할인 후 예상 결제 금액>";
     private static final String DECEMBER_EVENT_BADGE = "<12월 이벤트 배지>";
     private static final int NO_DISCOUNT = 0;
+    private static final String PRESENT_MESSAGE = "주문 금액이 12만원 이상인 고객님께 25,000원 상당의 샴페인 1병을 증정합니다!\n";
 
     public static void startMessage() {
         System.out.println(GREETING);
@@ -87,6 +88,7 @@ public class OutputView {
     }
 
     public static void present(String present) {
+        presentAnnouncement(present);
         System.out.println(PRESENT_MENU);
         if (present.length() != NO_DISCOUNT) {
             System.out.println(present);
@@ -141,4 +143,9 @@ public class OutputView {
         badgeAnnouncement(badge);
     }
 
+    public static void presentAnnouncement(String present) {
+        if (present.length() != 0) {
+            System.out.println(PRESENT_MESSAGE);
+        }
+    }
 }
