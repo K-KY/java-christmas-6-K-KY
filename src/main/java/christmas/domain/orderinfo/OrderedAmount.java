@@ -41,6 +41,9 @@ public class OrderedAmount {
     }
 
     public ChristmasBadge getBadge() {
+        if (totalAmount < EVENT_CONDITION) {
+            return ChristmasBadge.NO_BADGE;
+        }
         return ChristmasBadge.getBadge(totalAmount);
     }
 }
