@@ -17,9 +17,9 @@ public class ChristmasDiscounter {
     }
 
     public int discount(Date date, Benefit benefit) {
-        if (date.isBeforeChristmas() && orderedAmount.isOverTenThousand()) {
-            benefit.addBenefit(CHRISTMAS_DISCOUNT + MONEY_FORMAT.format(date.discount()));
-            return date.discount();
+        if (orderedAmount.isOverTenThousand()) {
+            benefit.addBenefit(CHRISTMAS_DISCOUNT + MONEY_FORMAT.format(date.christmasDiscount()));
+            return date.christmasDiscount();
         }
         return ZERO;
     }
