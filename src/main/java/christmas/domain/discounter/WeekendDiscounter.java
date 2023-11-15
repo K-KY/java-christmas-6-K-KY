@@ -15,7 +15,6 @@ public class WeekendDiscounter {
     private static final String PRICE_FORMAT = "-###,###원";
     private static final DecimalFormat MONEY_FORMAT = new DecimalFormat(PRICE_FORMAT);
     public static final MenuCategory mainCategory = MainMenu.getMenuCategory();
-    private static final List<Integer> amount = new ArrayList<>();
     private static final String WEEKEND_DISCOUNT = "주말 할인: ";
     private static final int DISCOUNT = 2023;
 
@@ -30,6 +29,7 @@ public class WeekendDiscounter {
     }
 
     private static long mainCount(List<Menu> orders) {
+        List<Integer> amount = new ArrayList<>();
         orders.stream()
                 .filter(order -> order.isMain(mainCategory))
                 .map(order -> order.addAmount(amount))
