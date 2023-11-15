@@ -1,9 +1,8 @@
-package christmas.domain.oderinfo;
+package christmas.domain.orderinfo;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import christmas.domain.orderinfo.Date;
 import org.junit.jupiter.api.Test;
 
 public class DateTest {
