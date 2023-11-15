@@ -15,6 +15,7 @@ public class Date {
     private static final int CHRISTMAS_DAY = 25;
     private static final int INCREASE = 100;
     private static final int DEFAULT_DISCOUNT = 1000;
+    private static final int NO_DISCOUNT = 0;
 
     private final int date;
 
@@ -34,7 +35,10 @@ public class Date {
         return date <= CHRISTMAS_DAY;
     }
 
-    public int discount() {
+    public int christmasDiscount() {
+        if (date > CHRISTMAS_DAY) {
+            return NO_DISCOUNT;
+        }
         return DEFAULT_DISCOUNT + ((date - DAY) * INCREASE);
     }
 
