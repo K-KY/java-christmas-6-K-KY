@@ -8,8 +8,8 @@ public class OrderedAmount {
     private static final int EVENT_CONDITION = 10000;
     private static final int PRESENT_CONDITION = 120000;
 
-    private static int totalAmount = 0;
-    private static int totalDiscount = 0;
+    private int totalAmount = 0;
+    private int totalDiscount = 0;
 
 
     public boolean isOverTenThousand() {
